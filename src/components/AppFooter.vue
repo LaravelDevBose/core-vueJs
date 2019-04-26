@@ -1,11 +1,12 @@
 <template>
     <div id="footer">
-        <h5>@copyright By Brainchild Soft. {{ title }}</h5>
+        <h5 :class="{redColor:redColor}">@copyright By Brainchild Soft. {{ title }}</h5>
+        <button @click="changeFontColor">Change Color</button>
     </div>
 </template>
 
 <script>
-
+    import {bus} from '../main'
     export default{
 
         props:{
@@ -13,7 +14,18 @@
                 type:String,
             }
         },
-        name: "AppFooter"
+        name: "AppFooter",
+        data(){
+          return{
+              redColor:false
+          }
+        },
+        methods:{
+            changeFontColor(){
+                this.redColor = !this.redColor;
+                bus.$emit('colorChange', this.redColor);
+            }
+        }
     }
 </script>
 
