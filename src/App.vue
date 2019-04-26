@@ -1,17 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <AppHeader :title="title" v-on:changeTitle="updateTitle($event)"/>
+    <AppBody/>
+  <AppFooter :title="title"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppHeader from './components/AppHeader'
+import AppBody from './components/AppBody'
+import AppFooter from './components/AppFooter'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    AppHeader,
+    AppBody,
+    AppFooter,
+  },
+  data(){
+    return {
+      title:'Vue js Advance'
+    }
+  },
+  methods:{
+    updateTitle(updatedTitle){
+      this.title = updatedTitle;
+    }
   }
 }
 </script>
@@ -23,6 +38,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 10px;
 }
 </style>
