@@ -4,11 +4,11 @@
         <form action="">
             <div class="py-5">
                 <input type="text" v-model="form.name" placeholder="Enter Your name">
-                <p>Name: {{ form.name}}</p>
+                <p>Name: {{ form.name | to-uppercase}}</p>
             </div>
             <div class="py-5">
                 <textarea  cols="30" rows="10" v-model="form.address"></textarea>
-                <p>Address: {{ form.address}}</p>
+                <p>Address: {{ form.address | snippet}}</p>
             </div>
             <div class="py-5">
                 <label > CB One</label>
