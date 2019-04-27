@@ -29,6 +29,14 @@
                     <li v-for="(check,index) in form.checkBoxes" :key="index">{{ check }}</li>
                 </ul>
             </div>
+
+            <div>
+                <select v-model="form.optionValue">
+                    <option v-for="(option, index) in options" :key="index">{{ option }}</option>
+                </select>
+
+                <p>Option Value: {{ form.optionValue}}</p>
+            </div>
         </form>
     </div>
 </template>
@@ -42,7 +50,9 @@
                     name:"",
                     address:"",
                     checkBoxes:[],
-                }
+                    optionValue:"",
+                },
+                options:['option one', 'option two', 'option three', 'option four', 'option five'],
             }
         }
     }
