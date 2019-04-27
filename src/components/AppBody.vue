@@ -8,6 +8,8 @@
         <keep-alive>
             <component :is="component"></component>
         </keep-alive>
+
+        <DataBinding/>
     </div>
 
 </template>
@@ -15,11 +17,13 @@
 <script>
     import FormOne from './FormOne';
     import FormTwo from './FormTwo';
+    import DataBinding from './DataBinding';
     export default {
         name: "AppBody",
         components:{
-          FormOne,
-          FormTwo
+            FormOne,
+            FormTwo,
+            DataBinding
         },
         data(){
             return{
