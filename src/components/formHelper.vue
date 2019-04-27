@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="formHelper">
         <h1>Vue js Slot Form</h1>
         <form action="">
             <div id="form-header">
@@ -22,5 +22,7 @@
 </script>
 
 <style scoped>
-
+#formHelper{
+    padding: 15px 0;
+}
 </style>
